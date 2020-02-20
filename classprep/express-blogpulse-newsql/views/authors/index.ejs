@@ -1,14 +1,16 @@
 <h1>Authors</h1>
-
-<% authors.forEach(function(author) { %>
-  <div class="well">
-    <h2>
-      <a href="/authors/<%= author.id %>">
-        <%= author.getFullName() %>
-      </a>
-    </h2>
-  </div>
-<% }) %>
+<div class="authors">
+  <% authors.forEach(function(author) { %>
+    <div class="well author">
+      <img src="https://picsum.photos/200/200">
+      <h2>
+        <a href="/authors/<%= author.id %>">
+          <%= author.getFullName() %>
+        </a>
+      </h2>
+    </div>
+  <% }) %>
+</div>
 
 <hr />
 

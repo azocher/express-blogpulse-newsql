@@ -8,14 +8,19 @@
     <h1>Latest Posts from BlogPulse</h1>
 
     <% articles.forEach(function(a) { %>
-      <div class="well">
-        <h2>
-          <a href="/articles/<%= a.id %>"><%= a.title %></a>
-          <small>by <%= a.author.getFullName() %></small>
-        </h2>
-        <p>
-          <strong><%= moment(a.createdAt).calendar() %></strong>
-        </p>
+      <div class="sidepicture">
+        <div class="sidepicture-pic">
+          <img src="https://picsum.photos/50">
+        </div>
+        <div class="well">
+          <h2>
+            <a href="/articles/<%= a.id %>"><%= a.title %></a>
+            <small>by <%= a.author.getFullName() %></small>
+          </h2>
+          <p>
+            <strong><%= moment(a.createdAt).calendar() %></strong>
+          </p>
+        </div>
       </div>
     <% }) %>
 
