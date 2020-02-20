@@ -22,6 +22,15 @@ body {
 .well {
   border-radius: 20px;
   color: black;
+  width: 100%;
+  padding: 0 0 10px 0;
+}
+.well img {
+  width: 100%;
+  margin: 15px 0;
+}
+.well p,h1,h2,h3,a,blockquote,em,form {
+  margin: 10px;
 }
 .sidepicture {
   display: flex;
@@ -36,12 +45,10 @@ body {
 .sidepicture-pic img {
   border-radius: 10px;
 }
-.authors {
 
-}
 .author {
   width: 275px;
-  height: 350px;
+  height: 400px;
   float: left;
   margin: 10px;
   text-align: center;
