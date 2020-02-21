@@ -2,3 +2,61 @@
   width: 100%;
   height: auto;
 }
+body {
+  background: #001935;
+  color: white;
+}
+.navbar, .navbar-default, .navbar-collapse, .navbar-ex1-collapse, .navbar-header {
+  background: #001935;
+  color: white;
+}
+.navbar img {
+  height: 30px;
+}
+.navbar-nav {
+  float:right;
+}
+.navbar-brand a {
+  color: white;
+}
+.well {
+  border-radius: 20px;
+  color: black;
+  width: 100%;
+  padding: 0 0 10px 0;
+}
+.well img {
+  width: 100%;
+  margin: 15px 0;
+}
+.well p,h1,h2,h3,a,blockquote,em,form {
+  margin: 10px;
+}
+.sidepicture {
+  display: flex;
+  flex-direction: row;
+}
+.sidepicture-pic {
+  border-radius: 10px;
+  height: 50px;
+  width: 50px;
+  margin: 2px;
+}
+.sidepicture-pic img {
+  border-radius: 10px;
+}
+
+.author {
+  width: 275px;
+  height: 400px;
+  float: left;
+  margin: 10px;
+  text-align: center;
+}
+.bio {
+  flex-direction: row;
+  display: flex;
+}
+.bio p {
+  margin: 10px;
+}

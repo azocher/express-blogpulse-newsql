@@ -1,10 +1,41 @@
-<h1><%= article.title %> <small>by <%= article.author.getFullName() %></small></h1>
+<div class="well">
+  <img src="https://picsum.photos/470/235">
+  <h1><%= article.title %> <small>by <%= article.author.getFullName() %></small></h1>
+  
+  <p>
+    <strong><%= moment(article.createdAt).calendar() %></strong>
+  </p>
+  
+  <p><%= article.content %></p>
+</div>
 
-<p>
-  <strong><%= moment(article.createdAt).calendar() %></strong>
-</p>
+<hr />
+<h2>Comments</h2>
+<% comments.forEach(function(comment) { %>
+  <div class="sidepicture">
+    <div class="sidepicture-pic">
+      <img src="https://picsum.photos/50">
+    </div>
+    <div class="well">
+      <blockquote>
+        <%= comment.content %>
+      </blockquote>
+      <em>- <%= comment.name %></em>
+    </div>
+  </div>
+<% }); %>
 
-<p><%= article.content %></p>
+<hr />
+
+<h2>Leave a comment</h2>
+<div class="well">
+  <form method="POST" action="/articles/<%= article.id %>/comments">
+    <label for="comment-name">Name:</label>
+    <input type="text" name="name" id="comment-name">
+    <input type="text" name="content" cols="40" rows="40" placeholder="say something...">
+    <input class="btn btn-primary" type="submit" value="Post">
+  </form>
+</div>
 
 <hr />
 

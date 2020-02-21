@@ -37,12 +37,27 @@ router.get('/:id', function(req, res) {
   .then(function(article) {
     if (!article) throw Error()
     console.log(article.author)
-    res.render('articles/show', { article: article })
+    db.comment.findAll({
+      where: { articleId: article.id }
+    }).then(function(comments) {
+      res.render('articles/show', { article: article, comments })
+    })
   })
   .catch(function(error) {
     console.log(error)
     res.status(400).render('main/404')
   })
+})
+
+router.post('/:id/comments', function(req, res) {
+  db.comment.create({
+    name: req.body.name,
+    content: req.body.content,
+    articleId: req.params.id
+  }).then(function(data) {
+    console.log(data);
+    res.redirect(`/articles/${req.params.id}`)
+  }).catch(err => console.log(err));
 })
 
 module.exports = router
